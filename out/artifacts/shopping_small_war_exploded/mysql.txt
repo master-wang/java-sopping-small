@@ -1,0 +1,47 @@
+用户表
+
+CREATE TABLE IF NOT EXISTS `user`(
+`id` INT UNSIGNED AUTO_INCREMENT,
+`username` VARCHAR(60) NULL,
+`password` VARCHAR(60)  NULL,
+`name` VARCHAR(60)  NULL,
+`sex` VARCHAR(10)  NULL,
+`phone` VARCHAR(30)  NULL,
+`age` VARCHAR(10)  NULL,
+`desc` VARCHAR(100)  NULL,
+`headImg` VARCHAR(300)  NULL,
+`is_admin` VARCHAR(20)  NULL DEFAULT 'false',
+PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+商品表
+CREATE TABLE IF NOT EXISTS `commodity`(
+`c_id` INT UNSIGNED AUTO_INCREMENT,
+`c_price` VARCHAR(10)  NULL,
+`c_desc` VARCHAR(100)  NULL,
+`type` VARCHAR(30) NULL,
+`c_img` VARCHAR(300)  NULL,
+PRIMARY KEY ( `c_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+订单表
+CREATE TABLE IF NOT EXISTS `orders`(
+`o_id` INT UNSIGNED AUTO_INCREMENT,
+`c_id` INT,
+`u_id` INT,
+`is_order` VARCHAR(20)  NULL DEFAULT 'false',
+PRIMARY KEY ( `o_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+投诉表
+CREATE TABLE IF NOT EXISTS `complaint`(
+`c_id` INT UNSIGNED AUTO_INCREMENT,
+`u_id` INT,
+`c_desc` VARCHAR(100)  NULL,
+PRIMARY KEY ( `c_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
